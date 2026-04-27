@@ -1,0 +1,149 @@
+{
+  "name": "viewthemall",
+  "version": "1.0.0",
+  "description": "Preview any file. One library. Framework-agnostic TypeScript library that normalizes every common file format into a unified model, then renders it with a single engine.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters/docx": {
+      "import": "./dist/adapters/docx/index.js",
+      "types": "./dist/adapters/docx/index.d.ts"
+    },
+    "./adapters/xlsx": {
+      "import": "./dist/adapters/xlsx/index.js",
+      "types": "./dist/adapters/xlsx/index.d.ts"
+    },
+    "./adapters/pdf": {
+      "import": "./dist/adapters/pdf/index.js",
+      "types": "./dist/adapters/pdf/index.d.ts"
+    },
+    "./adapters/text-code": {
+      "import": "./dist/adapters/text-code/index.js",
+      "types": "./dist/adapters/text-code/index.d.ts"
+    },
+    "./adapters/pptx": {
+      "import": "./dist/adapters/pptx/index.js",
+      "types": "./dist/adapters/pptx/index.d.ts"
+    },
+    "./adapters/image": {
+      "import": "./dist/adapters/image/index.js",
+      "types": "./dist/adapters/image/index.d.ts"
+    },
+    "./adapters/media": {
+      "import": "./dist/adapters/media/index.js",
+      "types": "./dist/adapters/media/index.d.ts"
+    },
+    "./adapters/archive": {
+      "import": "./dist/adapters/archive/index.js",
+      "types": "./dist/adapters/archive/index.d.ts"
+    },
+    "./adapters/xls": {
+      "import": "./dist/adapters/xls/index.js",
+      "types": "./dist/adapters/xls/index.d.ts"
+    },
+    "./adapters/xlsb": {
+      "import": "./dist/adapters/xlsb/index.js",
+      "types": "./dist/adapters/xlsb/index.d.ts"
+    },
+    "./adapters/csv": {
+      "import": "./dist/adapters/csv/index.js",
+      "types": "./dist/adapters/csv/index.d.ts"
+    },
+    "./adapters/rtf": {
+      "import": "./dist/adapters/rtf/index.js",
+      "types": "./dist/adapters/rtf/index.d.ts"
+    },
+    "./adapters/md": {
+      "import": "./dist/adapters/md/index.js",
+      "types": "./dist/adapters/md/index.d.ts"
+    },
+    "./adapters/odt": {
+      "import": "./dist/adapters/odt/index.js",
+      "types": "./dist/adapters/odt/index.d.ts"
+    },
+    "./adapters/ods": {
+      "import": "./dist/adapters/ods/index.js",
+      "types": "./dist/adapters/ods/index.d.ts"
+    },
+    "./adapters/odp": {
+      "import": "./dist/adapters/odp/index.js",
+      "types": "./dist/adapters/odp/index.d.ts"
+    },
+    "./adapters/epub": {
+      "import": "./dist/adapters/epub/index.js",
+      "types": "./dist/adapters/epub/index.d.ts"
+    },
+    "./adapters/doc": {
+      "import": "./dist/adapters/doc/index.js",
+      "types": "./dist/adapters/doc/index.d.ts"
+    },
+    "./adapters/ppt": {
+      "import": "./dist/adapters/ppt/index.js",
+      "types": "./dist/adapters/ppt/index.d.ts"
+    },
+    "./renderer": {
+      "import": "./dist/renderer/index.js",
+      "types": "./dist/renderer/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:check": "vitest run --coverage --reporter=verbose",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests --ext .ts",
+    "prepublishOnly": "npm run build && npm run typecheck && npm run test"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "prismjs": "^1.29.0"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.3",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "@vitest/coverage-v8": "^4.1.5",
+    "eslint": "^8.57.0",
+    "exceljs": "^4.4.0",
+    "jsdom": "^24.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^4.1.5"
+  },
+  "overrides": {
+    "uuid": "^14.0.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "file-preview",
+    "document-viewer",
+    "docx",
+    "xlsx",
+    "pptx",
+    "pdf",
+    "epub",
+    "odt",
+    "csv",
+    "markdown",
+    "typescript"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radioBros/view-them-all.git"
+  },
+  "bugs": {
+    "url": "https://github.com/radioBros/view-them-all/issues"
+  },
+  "homepage": "https://viewthemall.dev"
+}

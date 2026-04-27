@@ -1,0 +1,343 @@
+/* ─── UFPE Theme Variables ─────────────────────────────────────────────── */
+:root {
+  --ufpe-bg:              #ffffff;
+  --ufpe-bg-subtle:       #f5f5f5;
+  --ufpe-text:            #1a1a1a;
+  --ufpe-text-muted:      #666666;
+  --ufpe-border:          #e0e0e0;
+  --ufpe-accent:          #0070f3;
+  --ufpe-accent-hover:    #0060df;
+  --ufpe-code-bg:         #f0f0f0;
+  --ufpe-code-text:       #1a1a1a;
+  --ufpe-error-bg:        #fff0f0;
+  --ufpe-error-text:      #cc0000;
+  --ufpe-error-border:    #ffcccc;
+  --ufpe-font-body:       -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ufpe-font-mono:       'Fira Code', 'Cascadia Code', Consolas, 'Courier New', monospace;
+  --ufpe-font-weight-bold: 700;
+}
+
+[data-ufpe-theme="dark"] {
+  --ufpe-bg:              #0d0d0d;
+  --ufpe-bg-subtle:       #1a1a1a;
+  --ufpe-text:            #e8e8e8;
+  --ufpe-text-muted:      #888888;
+  --ufpe-border:          #2a2a2a;
+  --ufpe-accent:          #3b9aff;
+  --ufpe-accent-hover:    #5ab0ff;
+  --ufpe-code-bg:         #1e1e1e;
+  --ufpe-code-text:       #e8e8e8;
+  --ufpe-error-bg:        #1a0000;
+  --ufpe-error-text:      #ff6666;
+  --ufpe-error-border:    #660000;
+}
+
+/* ─── Base Container ───────────────────────────────────────────────────── */
+.ufpe-container {
+  font-family: var(--ufpe-font-body);
+  color:       var(--ufpe-text);
+  background:  var(--ufpe-bg);
+  line-height: 1.6;
+  padding:     1rem;
+  box-sizing:  border-box;
+}
+
+/* ─── Typography — Blocks ──────────────────────────────────────────────── */
+.ufpe-paragraph {
+  margin: 0 0 0.75em 0;
+}
+
+.ufpe-heading {
+  margin: 1.25em 0 0.5em 0;
+  line-height: 1.25;
+  color: var(--ufpe-text);
+}
+.ufpe-h1 { font-size: 2em;    font-weight: 700; }
+.ufpe-h2 { font-size: 1.6em;  font-weight: 700; }
+.ufpe-h3 { font-size: 1.3em;  font-weight: 600; }
+.ufpe-h4 { font-size: 1.1em;  font-weight: 600; }
+.ufpe-h5 { font-size: 1em;    font-weight: 600; }
+.ufpe-h6 { font-size: 0.9em;  font-weight: 600; }
+
+.ufpe-hr {
+  border: none;
+  border-top: 1px solid var(--ufpe-border);
+  margin: 1.5em 0;
+}
+
+/* ─── Typography — Inline ──────────────────────────────────────────────── */
+.ufpe-bold          { font-weight: var(--ufpe-font-weight-bold); }
+.ufpe-italic        { font-style: italic; }
+.ufpe-underline     { text-decoration: underline; }
+.ufpe-strikethrough { text-decoration: line-through; }
+.ufpe-inline-code {
+  font-family: var(--ufpe-font-mono);
+  font-size: 0.875em;
+  background: var(--ufpe-code-bg);
+  color: var(--ufpe-code-text);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+.ufpe-colored-text { color: var(--ufpe-text-color); }
+.ufpe-link {
+  color: var(--ufpe-accent);
+  text-decoration: underline;
+}
+.ufpe-link:hover { color: var(--ufpe-accent-hover); }
+
+.ufpe-inline-image {
+  vertical-align: middle;
+  max-height: 1.5em;
+}
+
+.ufpe-unknown-inline {
+  display: inline-block;
+  width: 1em;
+  height: 0.8em;
+  background: var(--ufpe-border);
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* ─── Lists ────────────────────────────────────────────────────────────── */
+.ufpe-list-ordered,
+.ufpe-list-unordered {
+  margin: 0 0 0.75em 0;
+  padding-left: 1.5em;
+}
+.ufpe-list-item {
+  margin-bottom: 0.25em;
+}
+
+/* ─── Table ────────────────────────────────────────────────────────────── */
+.ufpe-table-wrapper {
+  overflow-x: auto;
+  margin: 0.75em 0;
+  border: 1px solid var(--ufpe-border);
+  border-radius: 4px;
+}
+
+.ufpe-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.ufpe-table caption {
+  text-align: left;
+  padding: 0.5em 0.75em;
+  font-weight: 600;
+  color: var(--ufpe-text-muted);
+  border-bottom: 1px solid var(--ufpe-border);
+}
+
+.ufpe-table-header {
+  background: var(--ufpe-bg-subtle);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.75em;
+  border-bottom: 2px solid var(--ufpe-border);
+  border-right: 1px solid var(--ufpe-border);
+}
+
+.ufpe-table-cell {
+  padding: 0.4em 0.75em;
+  border-bottom: 1px solid var(--ufpe-border);
+  border-right: 1px solid var(--ufpe-border);
+  vertical-align: top;
+}
+
+.ufpe-table-row:last-child .ufpe-table-cell,
+.ufpe-table-row:last-child .ufpe-table-header {
+  border-bottom: none;
+}
+
+.ufpe-table-header:last-child,
+.ufpe-table-cell:last-child {
+  border-right: none;
+}
+
+/* ─── Image ────────────────────────────────────────────────────────────── */
+.ufpe-image-block {
+  margin: 0.75em 0;
+  text-align: center;
+}
+.ufpe-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.ufpe-image-caption {
+  font-size: 0.85em;
+  color: var(--ufpe-text-muted);
+  margin-top: 0.4em;
+  text-align: center;
+}
+
+/* ─── Code Block ───────────────────────────────────────────────────────── */
+.ufpe-code-block {
+  margin: 0.75em 0;
+  padding: 1em;
+  background: var(--ufpe-code-bg);
+  border: 1px solid var(--ufpe-border);
+  border-radius: 4px;
+  overflow-x: auto;
+  tab-size: 2;
+}
+.ufpe-code-block code {
+  font-family: var(--ufpe-font-mono);
+  font-size: 0.875em;
+  color: var(--ufpe-code-text);
+  white-space: pre;
+}
+
+/* ─── Slide ────────────────────────────────────────────────────────────── */
+.ufpe-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ufpe-slide-ar, 16 / 9);
+  container-type: size;
+  background: var(--ufpe-slide-bg, #f8f8f8);
+  border: 1px solid var(--ufpe-border);
+  border-radius: 4px;
+  margin: 0.75em 0;
+  overflow: hidden;
+  /* rawHtml inner div is absolute + scaled — clip it */
+  isolation: isolate;
+}
+.ufpe-slide-element {
+  position: absolute;
+  overflow: hidden;
+}
+.ufpe-slide-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ufpe-slide-para {
+  margin: 0;
+  line-height: 1.3;
+}
+.ufpe-slide-para:not(:last-child) {
+  margin-bottom: 0.2em;
+}
+.ufpe-slide-bullet {
+  display: inline-block;
+  margin-right: 0.4em;
+  min-width: 1em;
+  text-align: right;
+}
+.ufpe-slide-notes {
+  margin-top: 0.5em;
+  padding: 0.5em;
+  background: var(--ufpe-bg-subtle);
+  border-top: 1px solid var(--ufpe-border);
+  font-size: 0.85em;
+  color: var(--ufpe-text-muted);
+  position: static;
+  width: 100%;
+}
+.ufpe-slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ufpe-slide-table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-size: 0.8em;
+}
+.ufpe-slide-table th,
+.ufpe-slide-table td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.4em;
+  vertical-align: top;
+  overflow: hidden;
+}
+.ufpe-slide-table th {
+  background: rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
+
+/* ─── Unknown Block ────────────────────────────────────────────────────── */
+.ufpe-unknown-block {
+  display: block;
+  height: 4px;
+  background: var(--ufpe-border);
+  border-radius: 2px;
+  margin: 0.5em 0;
+  opacity: 0.5;
+}
+
+/* ─── Error ────────────────────────────────────────────────────────────── */
+.ufpe-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75em;
+  padding: 1em;
+  background: var(--ufpe-error-bg);
+  border: 1px solid var(--ufpe-error-border);
+  border-radius: 4px;
+  color: var(--ufpe-error-text);
+}
+.ufpe-error-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+.ufpe-error-message {
+  margin: 0 0 0.25em 0;
+  font-weight: 600;
+}
+.ufpe-error-code {
+  margin: 0;
+  font-family: var(--ufpe-font-mono);
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+/* ─── PDF Embed ────────────────────────────────────────────────────────── */
+.ufpe-pdf-embed {
+  width: 100%;
+  min-height: 600px;
+}
+.ufpe-pdf-iframe {
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+.ufpe-pdf-canvas {
+  max-width: 100%;
+  display: block;
+  margin: 0.5em auto;
+  border: 1px solid var(--ufpe-border);
+}
+
+/* ─── Media Embed ──────────────────────────────────────────────────────── */
+.ufpe-media-video,
+.ufpe-media-audio {
+  width: 100%;
+  display: block;
+}
+
+/* ─── Archive Tree ─────────────────────────────────────────────────────── */
+.ufpe-archive-tree {
+  font-family: var(--ufpe-font-mono);
+  font-size: 0.875em;
+}
+.ufpe-archive-node {
+  list-style: none;
+  padding-left: 1.5em;
+}
+.ufpe-archive-node-name {
+  cursor: default;
+  padding: 0.2em 0;
+}
+.ufpe-archive-node-dir {
+  cursor: pointer;
+  color: var(--ufpe-accent);
+}
