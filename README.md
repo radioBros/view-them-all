@@ -5,6 +5,7 @@
 A framework-agnostic TypeScript library that normalizes every common file format into a unified `DocumentModel`, then renders it with a single engine. Drop in a DOCX, PDF, spreadsheet, presentation, ebook, image, video, or ZIP — and get a consistent DOM preview with zero server round-trips.
 
 [ViewThemAll on npm](https://www.npmjs.com/package/@radiobros/viewthemall)
+
 [Playground](https://viewthemall.woptima.com/playground)
 
 ```ts
