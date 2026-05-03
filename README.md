@@ -6,7 +6,7 @@ A framework-agnostic TypeScript library that normalizes every common file format
 
 [ViewThemAll on npm](https://www.npmjs.com/package/@radiobros/viewthemall)
 
-[Playground](https://viewthemall.woptima.com/playground)
+[Playground](https://viewthemall.radiobros.com/playground)
 
 ```ts
 import { registerAdapter, engine } from 'viewthemall'
