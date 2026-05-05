@@ -43,8 +43,8 @@ describe('epubAdapter', () => {
       expect(text).toContain('Hello EPUB world')
     }
 
-    expect(meta.title).toBe('Test Book')
-    expect(meta.pageCount).toBe(1)
+    expect(meta!.title).toBe('Test Book')
+    expect(meta!.pageCount).toBe(1)
   })
 
   it('inserts HrBlock between chapters', async () => {
@@ -244,8 +244,8 @@ describe('epubAdapter', () => {
     const result = await epubAdapter.parse(buf)
     expect(result.ok).toBe(true)
     if (!result.ok) return
-    expect(result.value.meta.title).toBe('Test Book')
-    expect(result.value.meta.pageCount).toBe(2)
+    expect(result.value.meta!.title).toBe('Test Book')
+    expect(result.value.meta!.pageCount).toBe(2)
   })
 
   it('resolves image srcs in chapters to blob: URLs', async () => {

@@ -69,13 +69,13 @@ describe('odpAdapter', () => {
 
     const { blocks } = result.value
     expect(blocks).toHaveLength(3)
-    expect(blocks[0].type).toBe('slide')
-    expect(blocks[1].type).toBe('slide')
-    expect(blocks[2].type).toBe('slide')
+    expect(blocks[0]!.type).toBe('slide')
+    expect(blocks[1]!.type).toBe('slide')
+    expect(blocks[2]!.type).toBe('slide')
 
-    if (blocks[0].type === 'slide') expect(blocks[0].index).toBe(0)
-    if (blocks[1].type === 'slide') expect(blocks[1].index).toBe(1)
-    if (blocks[2].type === 'slide') expect(blocks[2].index).toBe(2)
+    if (blocks[0]!.type === 'slide') expect(blocks[0]!.index).toBe(0)
+    if (blocks[1]!.type === 'slide') expect(blocks[1]!.index).toBe(1)
+    if (blocks[2]!.type === 'slide') expect(blocks[2]!.index).toBe(2)
   })
 
   it('extracts text from multiple shapes on one slide', async () => {
@@ -195,7 +195,7 @@ describe('odpAdapter', () => {
     const result = await odpAdapter.parse(buf)
     expect(result.ok).toBe(true)
     if (!result.ok) return
-    expect(result.value.meta.slideCount).toBe(2)
+    expect(result.value.meta!.slideCount).toBe(2)
   })
 
   it('resolves slide background color from automatic-styles in content.xml', async () => {

@@ -22,7 +22,8 @@ export class PreviewEngine {
   async preview(
     file: File,
     container: HTMLElement,
-    options?: ParseOptions
+    options?: ParseOptions | null,
+    config?: unknown
   ): Promise<Result<DocumentModel>> {
     this.hooks.onParseStart?.(file)
 
@@ -35,7 +36,8 @@ export class PreviewEngine {
       return result
     }
 
-    const result = await adapter.parse(file, options)
+    const opts: ParseOptions | undefined = options ?? undefined
+    const result = await adapter.parse(file, config !== undefined ? { ...opts, config } : opts)
     this.hooks.onParseEnd?.(result)
 
     if (!result.ok) {
@@ -64,9 +66,10 @@ export function registerAdapter(adapter: import('../adapter/Adapter').Adapter): 
 export async function preview(
   file: File,
   container: HTMLElement,
-  options?: ParseOptions
+  options?: ParseOptions | null,
+  config?: unknown
 ): Promise<Result<DocumentModel>> {
-  return engine.preview(file, container, options)
+  return engine.preview(file, container, options, config)
 }
 
 export { unmount } from '../../renderer/Container'

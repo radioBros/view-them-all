@@ -1,6 +1,6 @@
 {
-  "name": "viewthemall",
-  "version": "1.0.0",
+  "name": "@radiobros/viewthemall",
+  "version": "1.0.2",
   "description": "Preview any file. One library. Framework-agnostic TypeScript library that normalizes every common file format into a unified model, then renders it with a single engine.",
   "type": "module",
   "main": "./dist/index.js",
@@ -98,7 +98,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:coverage:check": "vitest run --coverage --reporter=verbose",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "lint": "eslint src tests --ext .ts",
     "prepublishOnly": "npm run build && npm run typecheck && npm run test"
   },
@@ -137,6 +137,10 @@
     "markdown",
     "typescript"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "radioBros",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -145,5 +149,5 @@
   "bugs": {
     "url": "https://github.com/radioBros/view-them-all/issues"
   },
-  "homepage": "https://viewthemall.dev"
+  "homepage": "https://viewthemall.radiobros.com"
 }

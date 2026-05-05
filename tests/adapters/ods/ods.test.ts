@@ -155,8 +155,8 @@ describe('odsAdapter', () => {
 
     expect(headings.length).toBe(2)
     expect(tables.length).toBe(2)
-    expect(headings[0].content[0].text).toBe('Sales')
-    expect(headings[1].content[0].text).toBe('Costs')
+    expect((headings[0] as any).content[0].text).toBe('Sales')
+    expect((headings[1] as any).content[0].text).toBe('Costs')
   })
 
   it('includes sheetNames in meta', async () => {

@@ -47,7 +47,7 @@ describe('odtAdapter', () => {
     const headings = result.value.blocks.filter((b: any) => b.type === 'heading')
     expect(headings.length).toBeGreaterThanOrEqual(2)
     expect(headings[0]).toMatchObject({ type: 'heading', level: 1 })
-    expect(headings[0].content[0].text).toContain('Main Title')
+    expect((headings[0] as any).content[0].text).toContain('Main Title')
     expect(headings[1]).toMatchObject({ type: 'heading', level: 2 })
   })
 
@@ -62,7 +62,7 @@ describe('odtAdapter', () => {
 
     const paras = result.value.blocks.filter((b: any) => b.type === 'paragraph')
     expect(paras.length).toBeGreaterThanOrEqual(2)
-    expect(paras[0].content[0].text).toContain('Hello world')
+    expect((paras[0] as any).content[0].text).toContain('Hello world')
   })
 
   it('detects heading from style name (Heading_20_1 pattern)', async () => {
@@ -75,7 +75,7 @@ describe('odtAdapter', () => {
 
     const heading = result.value.blocks.find((b: any) => b.type === 'heading')
     expect(heading).toBeDefined()
-    expect(heading?.level).toBe(1)
+    expect((heading as any)?.level).toBe(1)
   })
 
   it('parses bold and italic spans', async () => {

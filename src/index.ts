@@ -15,6 +15,9 @@ export { normalizeMeta } from './core/model/meta'
 export type { Adapter, ParseOptions } from './core/adapter/Adapter'
 export { AdapterRegistry, defaultRegistry } from './core/adapter/AdapterRegistry'
 
+// ─── Adapter-specific config types ────────────────────────────────────────────
+export type { PdfViewerConfig } from './adapters/pdf/types'
+
 // ─── Engine ───────────────────────────────────────────────────────────────────
 export { PreviewEngine, engine, registerAdapter, preview, unmount } from './core/engine/PreviewEngine'
 export type { EngineHooks } from './core/engine/PreviewEngine'

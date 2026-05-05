@@ -36,6 +36,9 @@ export function unmount(container: HTMLElement): void {
 function collectObjectUrls(container: HTMLElement, set: Set<string>): void {
   container.querySelectorAll('[src]').forEach(el => {
     const src = el.getAttribute('src') ?? ''
-    if (src.startsWith('blob:')) set.add(src)
+    if (src.startsWith('blob:')) {
+      // Strip fragment so revokeObjectURL receives the bare blob URL
+      set.add(src.split('#')[0] ?? src)
+    }
   })
 }

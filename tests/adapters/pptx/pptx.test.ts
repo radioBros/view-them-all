@@ -182,7 +182,7 @@ describe('pptxAdapter', () => {
 
     const { blocks } = result.value
     expect(blocks).toHaveLength(1)
-    expect(blocks[0].type).toBe('slide')
+    expect(blocks[0]!.type).toBe('slide')
   })
 
   // 2. Multi-slide PPTX → multiple SlideBlocks in order
@@ -199,9 +199,9 @@ describe('pptxAdapter', () => {
 
     const { blocks } = result.value
     expect(blocks).toHaveLength(3)
-    expect(blocks[0].type).toBe('slide')
-    expect(blocks[1].type).toBe('slide')
-    expect(blocks[2].type).toBe('slide')
+    expect(blocks[0]!.type).toBe('slide')
+    expect(blocks[1]!.type).toBe('slide')
+    expect(blocks[2]!.type).toBe('slide')
   })
 
   // 3. SlideBlock has correct index, canvasWidth, canvasHeight
@@ -304,7 +304,7 @@ describe('pptxAdapter', () => {
     expect(result.ok).toBe(true)
     if (!result.ok) return
 
-    expect(result.value.meta.slideCount).toBe(3)
+    expect(result.value.meta!.slideCount).toBe(3)
   })
 
   // Additional: SlideElement x/y/width/height are set from xfrm
